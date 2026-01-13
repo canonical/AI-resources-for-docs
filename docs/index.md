@@ -7,14 +7,24 @@ These helper tools are provided as-is, and may require additional tweaking, prom
 If you find ways to improve the performance of any of the helper tools through your own experiments, please feel free to contribute!
 
 
-## Placeholders
+## Docs wishlist
 
 For documentation we want to create:
 
 * Get started with GitHub Copilot in your docs
 
-* One-shot tasks
+* Context engineering + more examples
 
-* Repeated tasks you can automate
+* Useful resources list
 
-* etc
+* More experiments and useful outputs
+
+
+```{toctree}
+:maxdepth: 1
+
+Context engineering <context/index>
+Re-usable prompts <prompts/index>
+Helper scripts <scripts/index>
+Full toolkits <toolkits/index>
+```

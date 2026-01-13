@@ -1,166 +1,176 @@
-# Ubuntu Server Documentation - Copilot Instructions
+(ci-ubuntu-server)=
+# Copilot instructions example: Ubuntu Server
 
-## Project Overview
+Created with:
+: LLM: Claude Sonnet 4.5
+: Agent: GitHub Copilot
+: Documentation set: Ubuntu Server
 
-This is the **Ubuntu Server documentation** - a Sphinx-based documentation project using the [Canonical Sphinx Docs Starter Pack](https://github.com/canonical/sphinx-docs-starter-pack). Documentation targets the latest Ubuntu LTS release, calling out version-specific differences when they exist.
+-----
 
-## Architecture & Structure
+    # Ubuntu Server Documentation - Copilot Instructions
 
-### Diátaxis Framework
+    ## Project Overview
 
-Content is organized using the [Diátaxis framework](https://diataxis.fr/):
-- `tutorial/` - Getting started guides (e.g., `basic-installation.md`)
-- `how-to/` - Task-oriented guides organized by topic (installation, security, networking, virtualisation, etc.)
-- `explanation/` - Conceptual overviews and background information
-- `reference/` - Technical specifications, glossaries, system requirements
-- `contributing/` - Contributor documentation
+    This is the **Ubuntu Server documentation** - a Sphinx-based documentation project using the [Canonical Sphinx Docs Starter Pack](https://github.com/canonical/sphinx-docs-starter-pack). Documentation targets the latest Ubuntu LTS release, calling out version-specific differences when they exist.
 
-### File Types
+    ## Architecture & Structure
 
-- **Markdown (`.md`)** - Primary format for content pages with MyST syntax support
-- **reStructuredText (`.rst`)** - Landing pages, index files, and structural elements
-- Mixed content: Both formats coexist and are processed by Sphinx
+    ### Diátaxis Framework
 
-### Key Configuration Files
+    Content is organized using the [Diátaxis framework](https://diataxis.fr/):
+    - `tutorial/` - Getting started guides (e.g., `basic-installation.md`)
+    - `how-to/` - Task-oriented guides organized by topic (installation, security, networking, virtualisation, etc.)
+    - `explanation/` - Conceptual overviews and background information
+    - `reference/` - Technical specifications, glossaries, system requirements
+    - `contributing/` - Contributor documentation
 
-- `conf.py` - Project-specific settings (edit here for customization)
-- `Makefile` / `Makefile.sp` - Build system (starter pack targets prefixed with `sp-`)
-- `.readthedocs.yaml` - Read the Docs build configuration
+    ### File Types
 
-## Development Workflow
+    - **Markdown (`.md`)** - Primary format for content pages with MyST syntax support
+    - **reStructuredText (`.rst`)** - Landing pages, index files, and structural elements
+    - Mixed content: Both formats coexist and are processed by Sphinx
 
-### Local Setup
+    ### Key Configuration Files
 
-```bash
-git clone git@github.com:canonical/ubuntu-server-documentation.git
-cd ubuntu-server-documentation
-sudo apt update
-sudo apt install make python3 python3-venv python3-pip
-make install
-```
+    - `conf.py` - Project-specific settings (edit here for customization)
+    - `Makefile` / `Makefile.sp` - Build system (starter pack targets prefixed with `sp-`)
+    - `.readthedocs.yaml` - Read the Docs build configuration
 
-### Build & Preview
+    ## Development Workflow
 
-```bash
-make run          # Build, watch, and serve at http://127.0.0.1:8000
-make html         # Build only
-make serve        # Serve only
-make clean-doc    # Clean built files
-```
+    ### Local Setup
 
-For remote/VM development, set `export SPHINX_HOST=0.0.0.0` before running `make run`.
+    ```bash
+    git clone git@github.com:canonical/ubuntu-server-documentation.git
+    cd ubuntu-server-documentation
+    sudo apt update
+    sudo apt install make python3 python3-venv python3-pip
+    make install
+    ```
 
-### Testing & Quality Checks
+    ### Build & Preview
 
-```bash
-make spelling     # Spell check (uses .custom_wordlist.txt for exceptions)
-make linkcheck    # Verify all links
-make woke         # Check inclusive language
-make pa11y        # Accessibility testing
-```
+    ```bash
+    make run          # Build, watch, and serve at http://127.0.0.1:8000
+    make html         # Build only
+    make serve        # Serve only
+    make clean-doc    # Clean built files
+    ```
 
-Always run `make spelling` and `make linkcheck` before submitting PRs.
+    For remote/VM development, set `export SPHINX_HOST=0.0.0.0` before running `make run`.
 
-## Writing Conventions
+    ### Testing & Quality Checks
 
-### Style & Language
+    ```bash
+    make spelling     # Spell check (uses .custom_wordlist.txt for exceptions)
+    make linkcheck    # Verify all links
+    make woke         # Check inclusive language
+    make pa11y        # Accessibility testing
+    ```
 
-- Follow the [Canonical documentation style guide](https://docs.ubuntu.com/styleguide/en)
-- Use **US English** (`en-US`)
-- Acronyms: Expand on first use, e.g., "Yet Another Markup Language (YAML)"
-- Add technical terms to `reference/glossary.rst` and spell exceptions to `.custom_wordlist.txt`
+    Always run `make spelling` and `make linkcheck` before submitting PRs.
 
-### Versioning Strategy
+    ## Writing Conventions
 
-This project does **not** use separate branches per Ubuntu release. Instead:
-- Default content applies to all supported LTS releases
-- Version-specific content uses **note admonitions**:
-  ```markdown
-  :::{note}
-  For Ubuntu 24.04 LTS (Noble) onwards, use the new method...
-  :::
-  ```
-- Major version differences use **MyST tabs** with sync keywords (e.g., `24.04`, `22.04`)
-- Order tabs from **newest to oldest** release
+    ### Style & Language
 
-### Cross-References
+    - Follow the [Canonical documentation style guide](https://docs.ubuntu.com/styleguide/en)
+    - Use **US English** (`en-US`)
+    - Acronyms: Expand on first use, e.g., "Yet Another Markup Language (YAML)"
+    - Add technical terms to `reference/glossary.rst` and spell exceptions to `.custom_wordlist.txt`
 
-- Use reference labels in `.rst` files: `.. _my-label:`
-- Link with `:ref:\`my-label\``
-- First mentions of packages/tools should link to official docs or manpages
-- Use semantic markup: `{kbd}\`Ctrl\``, `{manpage}\`dpkg(1)\``, `{term}\`DAC\``
-- Manpage links auto-generate URLs (no hardcoding needed)
+    ### Versioning Strategy
 
-### Markdown Elements
+    This project does **not** use separate branches per Ubuntu release. Instead:
+    - Default content applies to all supported LTS releases
+    - Version-specific content uses **note admonitions**:
+      ```markdown
+      :::{note}
+      For Ubuntu 24.04 LTS (Noble) onwards, use the new method...
+      :::
+      ```
+    - Major version differences use **MyST tabs** with sync keywords (e.g., `24.04`, `22.04`)
+    - Order tabs from **newest to oldest** release
 
-- **Headings**: Use proper hierarchy (`#`, `##`, `###`, `####`); don't skip levels
-- **Lists**: Use `1.` for all numbered items (auto-renumbers)
-- **Code blocks**: Specify language for syntax highlighting
-- **MyST extensions**: `colon_fence`, `deflist`, `linkify`, `substitution`
+    ### Cross-References
 
-### File Structure
+    - Use reference labels in `.rst` files: `.. _my-label:`
+    - Link with `:ref:\`my-label\``
+    - First mentions of packages/tools should link to official docs or manpages
+    - Use semantic markup: `{kbd}\`Ctrl\``, `{manpage}\`dpkg(1)\``, `{term}\`DAC\``
+    - Manpage links auto-generate URLs (no hardcoding needed)
 
-- Content pages only referenced once (via their section's landing page)
-- Landing pages in `how-to/`, `tutorial/`, etc. organize navigation
-- Images stored in `<section>/images/` directories
-- Shared links defined in `reuse/links.txt` and auto-included via `rst_epilog`
+    ### Markdown Elements
 
-## Critical Patterns
+    - **Headings**: Use proper hierarchy (`#`, `##`, `###`, `####`); don't skip levels
+    - **Lists**: Use `1.` for all numbered items (auto-renumbers)
+    - **Code blocks**: Specify language for syntax highlighting
+    - **MyST extensions**: `colon_fence`, `deflist`, `linkify`, `substitution`
 
-### Redirects
+    ### File Structure
 
-When renaming/moving/deleting files, **always add redirects**:
+    - Content pages only referenced once (via their section's landing page)
+    - Landing pages in `how-to/`, `tutorial/`, etc. organize navigation
+    - Images stored in `<section>/images/` directories
+    - Shared links defined in `reuse/links.txt` and auto-included via `rst_epilog`
 
-**Internal redirects** (in `redirects.txt`):
-```
-old/path/to/file/ new/path/to/file/
-```
+    ## Critical Patterns
 
-**External redirects** (in `conf.py` under `redirects = {}`):
-```python
-redirects = {
-    "how-to/containers/lxc-containers": "https://linuxcontainers.org/lxc/documentation/"
-}
-```
+    ### Redirects
 
-### Custom Wordlist
+    When renaming/moving/deleting files, **always add redirects**:
 
-Add valid technical terms/acronyms to `.custom_wordlist.txt` (alphabetically sorted) rather than wrapping in backticks, unless you want monospaced rendering.
+    **Internal redirects** (in `redirects.txt`):
+    ```
+    old/path/to/file/ new/path/to/file/
+    ```
 
-### PR Requirements
+    **External redirects** (in `conf.py` under `redirects = {}`):
+    ```python
+    redirects = {
+        "how-to/containers/lxc-containers": "https://linuxcontainers.org/lxc/documentation/"
+    }
+    ```
 
-- Link PRs to issues with `Fixes #<issue-number>` in description
-- Use [Conventional Comments](https://conventionalcomments.org/) for feedback
-- Include manual testing for code/commands
-- Preview builds available via Read the Docs check on PR
+    ### Custom Wordlist
 
-## Common Tasks
+    Add valid technical terms/acronyms to `.custom_wordlist.txt` (alphabetically sorted) rather than wrapping in backticks, unless you want monospaced rendering.
 
-### Adding New Content
+    ### PR Requirements
 
-1. Determine Diátaxis category (tutorial/how-to/explanation/reference)
-2. Create `.md` file in appropriate subdirectory
-3. Add to corresponding `index.rst` or section landing page
-4. Use reference labels: `(my-label)=` at top of Markdown files
-5. Test: `make run` and verify navigation
+    - Link PRs to issues with `Fixes #<issue-number>` in description
+    - Use [Conventional Comments](https://conventionalcomments.org/) for feedback
+    - Include manual testing for code/commands
+    - Preview builds available via Read the Docs check on PR
 
-### Updating Links
+    ## Common Tasks
 
-- Prefer reputable sources (official upstream docs, not blog posts)
-- Use "Further reading" sections for supplementary links
-- First package mention should link to docs/manpages
+    ### Adding New Content
 
-### Handling Errors
+    1. Determine Diátaxis category (tutorial/how-to/explanation/reference)
+    2. Create `.md` file in appropriate subdirectory
+    3. Add to corresponding `index.rst` or section landing page
+    4. Use reference labels: `(my-label)=` at top of Markdown files
+    5. Test: `make run` and verify navigation
 
-- **Spelling errors**: Add to `.custom_wordlist.txt` or wrap in backticks
-- **Link errors**: Check `linkcheck_ignore` in `conf.py`
-- **Build errors**: Check `.sphinx/venv/pip_install.log` for dependency issues
+    ### Updating Links
 
-## Don't Do This
+    - Prefer reputable sources (official upstream docs, not blog posts)
+    - Use "Further reading" sections for supplementary links
+    - First package mention should link to docs/manpages
 
-- Don't use emojis in documentation
-- Don't skip heading levels in document structure
-- Don't assume reader knowledge without explanation/links
-- Don't link to blog posts when official docs exist
-- Don't create version branches (use in-page version callouts)
+    ### Handling Errors
+
+    - **Spelling errors**: Add to `.custom_wordlist.txt` or wrap in backticks
+    - **Link errors**: Check `linkcheck_ignore` in `conf.py`
+    - **Build errors**: Check `.sphinx/venv/pip_install.log` for dependency issues
+
+    ## Don't Do This
+
+    - Don't use emojis in documentation
+    - Don't skip heading levels in document structure
+    - Don't assume reader knowledge without explanation/links
+    - Don't link to blog posts when official docs exist
+    - Don't create version branches (use in-page version callouts)
 

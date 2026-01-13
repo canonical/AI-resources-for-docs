@@ -1,10 +1,20 @@
-# SEO/AEO Audit Toolkit - Complete Package
+# SEO/AEO audit toolkit
 
-This toolkit provides everything you need to analyze, track, and improve the SEO and AEO performance of your documentation.
+This prototype toolkit provides everything you need to analyze, track, and improve the SEO and AEO performance of your documentation.
 
-## 📦 What's Included
+```{toctree}
+:maxdepth: 1
+:hidden:
+
+QUICK_REFERENCE
+docs/agent-prompt-template
+docs/README
+```
+
+## What's Included
 
 ### Core Tools
+
 1. **`seo_aeo_analyzer.py`** - Main analysis engine
    - Analyzes 232+ documentation pages
    - Scores 14 metrics (7 SEO + 7 AEO)

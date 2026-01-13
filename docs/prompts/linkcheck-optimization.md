@@ -1,3 +1,15 @@
+(linkcheck-optimization)=
+# Linkcheck optimization
+
+
+This prompt should allow you to replicate the documentation linkcheck optimization test.
+
+Created with:
+: LLM: Claude Sonnet 4.5
+: Agent: GitHub Copilot
+
+-----
+
 Prompt: Benchmark and Optimize Sphinx Linkcheck Performance
 
 I need to benchmark and optimize the linkcheck speed in my Sphinx documentation project. Please follow this systematic approach:
