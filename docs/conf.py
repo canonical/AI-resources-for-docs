@@ -21,31 +21,20 @@ import yaml
 #######################
 
 # Project name
-#
-# TODO: Update with the official name of your project or product
-
-project = "Documentation starter pack"
+project = "AI resources for docs"
 author = "Canonical Ltd."
 
 
 # Sidebar documentation title; best kept reasonably short
-#
 # TODO: To include a version number, add it here (hardcoded or automated).
-#
 # TODO: To disable the title, set to an empty string.
-
-html_title = project + " documentation"
+html_title = " "
 
 
 # Copyright string; shown at the bottom of the page
 #
 # Now, the starter pack uses CC-BY-SA as the license
 # and the current year as the copyright year.
-#
-# TODO: If your docs need another license, specify it instead of 'CC-BY-SA'.
-#
-# TODO: If your documentation is a part of the code repository of your project,
-#       it inherits the code license instead; specify it instead of 'CC-BY-SA'.
 #
 # NOTE: For static works, it is common to provide the first publication year.
 #       Another option is to provide both the first year of publication
@@ -59,7 +48,6 @@ html_title = project + " documentation"
 #       curl -H 'Authorization: token <TOKEN>' \
 #         -H 'Accept: application/vnd.github.v3.raw' \
 #         https://api.github.com/repos/canonical/<REPO> | jq '.created_at'
-
 copyright = "%s CC-BY-SA, %s" % (datetime.date.today().year, author)
 
 
@@ -70,7 +58,7 @@ copyright = "%s CC-BY-SA, %s" % (datetime.date.today().year, author)
 # NOTE: The Open Graph Protocol (OGP) enhances page display in a social graph
 #       and is used by social media platforms; see https://ogp.me/
 
-ogp_site_url = "https://canonical-starter-pack.readthedocs-hosted.com/"
+ogp_site_url = ""
 
 
 # Preview name of the documentation website
@@ -226,12 +214,7 @@ sitemap_excludes = [
 # NOTE: If undefined, set to None, or empty,
 #       the sphinx_reredirects extension will be disabled.
 
-redirects = {
-    'reference/doc-cheat-sheet-myst/': '../myst-syntax-reference',
-    'reference/doc-cheat-sheet/': '../rst-syntax-reference',
-    'reference/style-guide-myst/': '../myst-syntax-reference',
-    'reference/style-guide/': '../rst-syntax-reference',
-}
+redirects = {}
 
 
 ###########################
@@ -253,8 +236,8 @@ linkcheck_ignore = [
 linkcheck_anchors_ignore_for_url = [r"https://github\.com/.*"]
 
 # give linkcheck multiple tries on failure
-# linkcheck_timeout = 30
-linkcheck_retries = 3
+linkcheck_timeout = 15
+linkcheck_retries = 2
 
 ########################
 # Configuration extras #
@@ -266,8 +249,14 @@ linkcheck_retries = 3
 # NOTE: By default, the following MyST extensions are enabled:
 #       substitution, deflist, linkify
 
-# myst_enable_extensions = set()
-
+myst_enable_extensions = {
+    "colon_fence",
+    "dollarmath",
+    "tasklist",
+    "fieldlist",
+    "substitution",
+    "html_admonition",
+}
 
 # Custom Sphinx extensions; see
 # https://www.sphinx-doc.org/en/master/usage/extensions/index.html
