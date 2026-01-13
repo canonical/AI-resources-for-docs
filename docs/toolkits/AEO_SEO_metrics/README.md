@@ -65,7 +65,7 @@ docs/README
    - Goal setting
    - Progress tracking
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Option 1: Quick Start (Easiest)
 ```bash
@@ -82,7 +82,7 @@ python tools/seo_aeo_analyzer.py --output audits/audit-$(date +%Y-%m-%d).csv
 2. Use the prompt from `agent-prompt-template.md` with your AI agent
 3. Get detailed insights and recommendations
 
-## 📊 What Gets Analyzed
+## What Gets Analyzed
 
 ### SEO Metrics
 - ✅ Title tags & meta descriptions
@@ -102,7 +102,7 @@ python tools/seo_aeo_analyzer.py --output audits/audit-$(date +%Y-%m-%d).csv
 - ✅ Step-by-step format
 - ✅ Version specificity
 
-## 📁 File Structure
+## File Structure
 
 ```
 tools/
@@ -124,7 +124,7 @@ audits/
 └── report-YYYY-MM-DD.md         # Comparison reports
 ```
 
-## 💡 Common Workflows
+## Common Workflows
 
 ### First-Time Setup
 ```bash
@@ -162,7 +162,7 @@ python tools/seo_aeo_analyzer.py --output audits/after.csv
 python tools/compare_audits.py audits/before.csv audits/after.csv --output audits/impact-report.md
 ```
 
-## 🎯 Impact by Priority
+## Impact by Priority
 
 | Action | Impact | Effort | ROI | Priority |
 |--------|--------|--------|-----|----------|
@@ -172,7 +172,7 @@ python tools/compare_audits.py audits/before.csv audits/after.csv --output audit
 | Add version info | Medium | Low | ⭐⭐⭐⭐ | ⚡ 4 |
 | Expand thin content | High | High | ⭐⭐⭐ | 📅 5 |
 
-## 📈 Expected Results
+## Expected Results
 
 Based on the baseline audit:
 
@@ -196,7 +196,7 @@ Based on the baseline audit:
 - Content depth: <15% under 300 words
 - All critical issues resolved
 
-## 🤖 AI Agent Integration
+## AI Agent Integration
 
 The toolkit is designed to work seamlessly with AI agents:
 
@@ -207,7 +207,7 @@ The toolkit is designed to work seamlessly with AI agents:
 
 See `agent-prompt-template.md` for ready-to-use prompts.
 
-## 🔧 Customization
+## Customization
 
 All tools are easily customizable:
 
@@ -230,21 +230,21 @@ Edit `find_content_files()`:
 target_dirs = ["tutorial", "how-to", "explanation", "reference", "guides"]
 ```
 
-## 📚 Resources
+## Resources
 
 - **Full Documentation**: `tools/README.md`
 - **Quick Reference**: `tools/QUICK_REFERENCE.md`
 - **AI Prompts**: `tools/agent-prompt-template.md`
 - **Change Log**: `audits/AUDIT_HISTORY.md`
 
-## ⚙️ Requirements
+## Requirements
 
 - Python 3.7+ (no external dependencies!)
-- Bash (for run-audit.sh)
+- Bash (for `run-audit.sh`)
 - Git (for version tracking)
 - Optional: GitHub Actions (for automation)
 
-## 🆘 Support
+## Support
 
 ### Common Issues
 
@@ -267,7 +267,7 @@ target_dirs = ["tutorial", "how-to", "explanation", "reference", "guides"]
 3. Check existing audit CSVs for examples
 4. Use AI agent with prompt template for analysis
 
-## 🎓 Learning Path
+## Learning Path
 
 1. **Day 1**: Run first audit, review summary
 2. **Day 2**: Read full README, understand metrics
@@ -278,7 +278,7 @@ target_dirs = ["tutorial", "how-to", "explanation", "reference", "guides"]
 7. **Month 2**: Expand content, ongoing improvements
 8. **Month 3**: Automate with GitHub Actions
 
-## 📝 Best Practices
+## Best Practices
 
 ✅ **DO:**
 - Run audits regularly (weekly/monthly)
@@ -295,7 +295,7 @@ target_dirs = ["tutorial", "how-to", "explanation", "reference", "guides"]
 - Skip documentation of changes
 - Forget to celebrate improvements
 
-## 🎉 Success Stories
+## Success Stories
 
 After implementing recommendations from this toolkit:
 
@@ -305,7 +305,7 @@ After implementing recommendations from this toolkit:
 - **Better LLM extraction** from AI assistants
 - **Improved user navigation** through internal linking
 
-## 🔄 Version History
+## Version History
 
 - **v1.0** (2025-12-10): Initial release
   - Full analyzer with 14 metrics
@@ -314,7 +314,7 @@ After implementing recommendations from this toolkit:
   - GitHub Actions workflow
   - Complete documentation
 
-## 📄 License
+## License
 
 Part of Ubuntu Server Documentation project. Same license applies.
 
@@ -344,4 +344,4 @@ cat seo-aeo-audit.csv | less
 
 ---
 
-**Ready to improve your documentation?** Start with `./tools/run-audit.sh`! 🚀
+**Ready to improve your documentation?** Start with `./tools/run-audit.sh`!
