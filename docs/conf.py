@@ -21,31 +21,20 @@ import yaml
 #######################
 
 # Project name
-#
-# TODO: Update with the official name of your project or product
-
-project = "Documentation starter pack"
+project = "AI resources for docs"
 author = "Canonical Ltd."
 
 
 # Sidebar documentation title; best kept reasonably short
-#
 # TODO: To include a version number, add it here (hardcoded or automated).
-#
 # TODO: To disable the title, set to an empty string.
-
-html_title = project + " documentation"
+html_title = " "
 
 
 # Copyright string; shown at the bottom of the page
 #
 # Now, the starter pack uses CC-BY-SA as the license
 # and the current year as the copyright year.
-#
-# TODO: If your docs need another license, specify it instead of 'CC-BY-SA'.
-#
-# TODO: If your documentation is a part of the code repository of your project,
-#       it inherits the code license instead; specify it instead of 'CC-BY-SA'.
 #
 # NOTE: For static works, it is common to provide the first publication year.
 #       Another option is to provide both the first year of publication
@@ -59,7 +48,6 @@ html_title = project + " documentation"
 #       curl -H 'Authorization: token <TOKEN>' \
 #         -H 'Accept: application/vnd.github.v3.raw' \
 #         https://api.github.com/repos/canonical/<REPO> | jq '.created_at'
-
 copyright = "%s CC-BY-SA, %s" % (datetime.date.today().year, author)
 
 
@@ -70,7 +58,7 @@ copyright = "%s CC-BY-SA, %s" % (datetime.date.today().year, author)
 # NOTE: The Open Graph Protocol (OGP) enhances page display in a social graph
 #       and is used by social media platforms; see https://ogp.me/
 
-ogp_site_url = "https://canonical-starter-pack.readthedocs-hosted.com/"
+ogp_site_url = ""
 
 
 # Preview name of the documentation website
