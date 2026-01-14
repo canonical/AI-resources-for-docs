@@ -10,6 +10,7 @@ Note that the prompts provided here have not been battle-tested or refined so yo
 
 add-metadata-descriptions
 cleanup-spellcheck
+doc-planning
 linkcheck-optimization
 premade-metaprompt
 ```
