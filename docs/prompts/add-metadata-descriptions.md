@@ -9,6 +9,11 @@ Created with:
 : LLM: Claude Sonnet 4.5
 : Agent: GitHub Copilot
 
+```{note}
+Based on the assessment of my team, I can provide an approximate error rate of **about 20%**. That is to say, that of all the metadata descriptions that were verified by my engineers,
+20% of them required some level of amendment. Please take this into consideration when using this prompt.
+```
+
 -----
 
 
