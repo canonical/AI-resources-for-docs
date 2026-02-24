@@ -108,8 +108,8 @@ Based on the assessment of my team, I can provide an approximate error rate of *
     ### reStructuredText
 
     ```rst
-    :html_meta:
-     description: Learn how to install and configure Apache web server on Ubuntu Server with SSL/TLS support.
+    .. meta::
+       :description: Learn how to install and configure Apache web server on Ubuntu Server with SSL/TLS support.
 
     .. _apache-installation:
 
