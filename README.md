@@ -18,3 +18,4 @@ facilitate our work on documentation.
 
 - _GitHub Copilot Fundamentals_ ([part 1](https://learn.microsoft.com/en-gb/training/paths/copilot/), [part 2](https://learn.microsoft.com/en-gb/training/paths/gh-copilot-2/)) - Microsoft Learn training modules on Copilot; a more theoretical take on the basics.
   Most notably, this includes the [Documentation generation](https://learn.microsoft.com/en-gb/training/modules/generate-documentation-using-github-copilot-tools/) module.
+- [Get started with AI-assisted development](https://learn.microsoft.com/en-gb/training/paths/accelerate-app-development-using-github-copilot/) - Focused on development, but includes plenty of useful practices.
