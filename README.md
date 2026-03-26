@@ -4,6 +4,10 @@ This repository acts as a pool for our ongoing AI experiments in documentation.
 It holds various re-usable prompts, LLM-generated scripts and other tools to
 facilitate our work on documentation.
 
+## Practical applications
+
+- https://github.com/canonical/copilot-collections - a company-wide collection of Copilot resources that includes a set of [documentation review skills](https://discourse.canonical.com/t/documentation-review-skills-for-github-copilot/7104)
+
 ## Learning resources
 
 ### Generative AI, agents
