@@ -11,7 +11,7 @@ I need you to survey the documentation and convert all links to use semantic mar
 ### Task Overview
 
 1. **Check configuration**: Verify if `{manpage}`, `{lpsrc}`, and `{lpbug}` roles are defined in `docs/conf.py`
-2. **Add roles if needed**: If not present, add the extlinks configuration
+2. **Add roles if needed**: If not present, add the `extlinks` configuration
 3. **Convert links**: Replace all matching URLs with semantic markup
 4. **Test**: Run `make linkcheck` to verify all changes work correctly
 
