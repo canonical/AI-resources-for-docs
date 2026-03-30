@@ -113,4 +113,4 @@ In the next tutorial, we'll look at pushing the capabilities of the LLMs using i
 
 -----
 
-Huge thanks to [odadacharles](https://github.com/odadacharles), who wrote the short guide this tutorial is based on, and [akcano](https://github.com/akcano), for sharing his tips and pointers!
+Huge thanks to [`odadacharles`](https://github.com/odadacharles), who wrote the short guide this tutorial is based on, and [`akcano`](https://github.com/akcano), for sharing his tips and pointers!
