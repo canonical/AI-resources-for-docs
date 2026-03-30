@@ -227,9 +227,9 @@ redirects = {}
 
 linkcheck_ignore = [
     "http://127.0.0.1:8000",
-    "https://github.com/canonical/ACME/*"
+    "https://github.com/canonical/ACME/*",
+    "https://github.com/canonical/GitHub-Copilot-license-manager/*",
     ]
-
 
 # A regex list of URLs where anchors are ignored by 'make linkcheck'
 
