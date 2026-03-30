@@ -1,3 +1,4 @@
+(reusable-prompts)=
 # Reusable prompts
 
 This section contains prompts that you can feed into your LLM of choice to get help with particular tasks.

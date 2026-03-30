@@ -7,24 +7,29 @@ These helper tools are provided as-is, and may require additional tweaking, prom
 If you find ways to improve the performance of any of the helper tools through your own experiments, please feel free to contribute!
 
 
-## Docs wishlist
-
-For documentation we want to create:
-
-* Get started with GitHub Copilot in your docs
-
-* Context engineering + more examples
-
-* Useful resources list
-
-* More experiments and useful outputs
-
+## In this documentation
 
 ```{toctree}
 :maxdepth: 1
 
+Getting started <tutorial/index>
 Context engineering <context/index>
 Re-usable prompts <prompts/index>
 Helper scripts <scripts/index>
 Full toolkits <toolkits/index>
 ```
+
+## Docs wishlist
+
+For this documentation we want to create:
+
+* Deeper tutorials about:
+  * instructions and skills
+  * Effective use of agents and orchestration
+
+* More experiments and useful outputs
+
+* Context engineering + more examples
+
+* Useful resources list
+
