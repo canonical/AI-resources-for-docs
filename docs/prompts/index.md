@@ -15,6 +15,7 @@ doc-planning
 linkcheck-optimization
 premade-metaprompt
 semantic-markup-conversion-prompt
+upgrade-the-starter-pack
 ```
 
 
