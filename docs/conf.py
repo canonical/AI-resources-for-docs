@@ -21,34 +21,28 @@ import yaml
 #######################
 
 # Project name
+#
+# TODO: Update with the official name of your project or product
 project = "AI resources for docs"
 author = "Canonical Ltd."
 
 
 # Sidebar documentation title; best kept reasonably short
+#
 # TODO: To include a version number, add it here (hardcoded or automated).
+#
 # TODO: To disable the title, set to an empty string.
 html_title = " "
 
 
-# Copyright string; shown at the bottom of the page
+# The year in the copyright statement defaults to the current year, so
+# individual document versions show when they were built.
+# TODO: If the date must be a range, like in a software license, replace 
+# 2026 with the starting year of development and use:
 #
-# Now, the starter pack uses CC-BY-SA as the license
-# and the current year as the copyright year.
-#
-# NOTE: For static works, it is common to provide the first publication year.
-#       Another option is to provide both the first year of publication
-#       and the current year, especially for docs that frequently change,
-#       e.g. 2022–2023 (note the en-dash).
-#
-#       A way to check a repo's creation date is to get a classic GitHub token
-#       with 'repo' permissions; see https://github.com/settings/tokens
-#       Next, use 'curl' and 'jq' to extract the date from the API's output:
-#
-#       curl -H 'Authorization: token <TOKEN>' \
-#         -H 'Accept: application/vnd.github.v3.raw' \
-#         https://api.github.com/repos/canonical/<REPO> | jq '.created_at'
-copyright = "%s CC-BY-SA, %s" % (datetime.date.today().year, author)
+# copyright = f"2026-{datetime.date.today().year}"
+
+copyright = f"{datetime.date.today().year}"
 
 
 # Documentation website URL
@@ -58,7 +52,7 @@ copyright = "%s CC-BY-SA, %s" % (datetime.date.today().year, author)
 # NOTE: The Open Graph Protocol (OGP) enhances page display in a social graph
 #       and is used by social media platforms; see https://ogp.me/
 
-ogp_site_url = ""
+ogp_site_url = "https://canonical-ai-resources-for-docs.readthedocs-hosted.com/"
 
 
 # Preview name of the documentation website
@@ -120,7 +114,7 @@ html_context = {
     #
     # NOTE: If set, links for viewing the documentation source files
     #       and creating GitHub issues are added at the bottom of each page.
-    "github_url": "https://github.com/canonical/sphinx-docs-starter-pack",
+    "github_url": "https://github.com/canonical/AI-resources-for-docs",
     # Docs branch in the repo; used in links for viewing the source files
     #
     # TODO: To customise the branch, uncomment and update as needed.
@@ -139,14 +133,29 @@ html_context = {
 
     # Required for feedback button    
     'github_issues': 'enabled',
+
+    # Inherit the author value
+    "author": author,
+
+    # The starter pack uses CC-BY-SA as the license
+    #
+    # TODO: If your docs need another license, specify it instead of 'CC-BY-SA'.
+    # For the name, we recommend using the standard shorthand identifier from
+    # https://spdx.org/licenses
+    #
+    # For the URL, link directly to the license statement, typically found on
+    # the product's home page or in its GitHub project.
+    #
+    # TODO: If your documentation is a part of the code repository of your project,
+    #       it inherits the code license instead; specify it instead of 'CC-BY-SA'.
+
+    "license": {
+        "name": "CC-BY-SA-3.0",
+        "url": "https://github.com/canonical/sphinx-docs-starter-pack/blob/main/LICENSE",
+    },
 }
 
 html_extra_path = []
-
-# Allow opt-in build of the OpenAPI "Hello" example so docs stay clean by default.
-if os.getenv("OPENAPI", ""):
-    tags.add("openapi")
-    html_extra_path.append("how-to/assets/openapi.yaml")
 
 # TODO: To enable the edit button on pages, uncomment and change the link to a
 # public repository on GitHub or Launchpad. Any of the following link domains
@@ -155,9 +164,9 @@ if os.getenv("OPENAPI", ""):
 # - https://launchpad.net/example
 # - https://git.launchpad.net/example
 #
-# html_theme_options = {
-# 'source_edit_link': 'https://github.com/canonical/sphinx-docs-starter-pack',
-# }
+html_theme_options = {
+    'source_edit_link': 'https://github.com/canonical/AI-resources-for-docs',
+}
 
 # Project slug; see https://meta.discourse.org/t/what-is-category-slug/87897
 #
@@ -205,16 +214,16 @@ sitemap_excludes = [
 # Redirects #
 #############
 
-# To set up redirects: https://documatt.gitlab.io/sphinx-reredirects/usage.html
-# For example: 'explanation/old-name.html': '../how-to/prettify.html',
+# Add redirects to the 'redirects.txt' file
+# https://sphinxext-rediraffe.readthedocs.io/en/latest/
 
 # To set up redirects in the Read the Docs project dashboard:
 # https://docs.readthedocs.io/en/stable/guides/redirects.html
 
-# NOTE: If undefined, set to None, or empty,
-#       the sphinx_reredirects extension will be disabled.
+rediraffe_redirects = "redirects.txt"
 
-redirects = {}
+# Strips '/index.html' from destination URLs when building with 'dirhtml'
+rediraffe_dir_only = True
 
 
 ###########################
@@ -227,8 +236,11 @@ redirects = {}
 
 linkcheck_ignore = [
     "http://127.0.0.1:8000",
-    "https://github.com/canonical/ACME/*",
-    "https://github.com/canonical/GitHub-Copilot-license-manager/*",
+    "https://github.com",
+    r"https://matrix\.to/.*",
+    "https://example.com",
+    # SourceForge domains often block linkcheck
+    r"https://.*\.sourceforge\.(net|io)/.*",
     ]
 
 # A regex list of URLs where anchors are ignored by 'make linkcheck'
@@ -267,6 +279,7 @@ extensions = [
     "canonical_sphinx",
     "notfound.extension",
     "sphinx_design",
+    "sphinx_rerediraffe",
     "sphinx_reredirects",
     "sphinx_tabs.tabs",
     "sphinxcontrib.jquery",
@@ -289,16 +302,21 @@ extensions = [
 
 exclude_patterns = [
     "doc-cheat-sheet*",
+    ".venv*",
 ]
 
 # Adds custom CSS files, located under 'html_static_path'
 
-# html_css_files = []
+# html_css_files = [
+#     "https://assets.ubuntu.com/v1/d86746ef-cookie_banner.css",
+# ]
 
 
 # Adds custom JavaScript files, located under 'html_static_path'
 
-# html_js_files = []
+# html_js_files = [
+#     "https://assets.ubuntu.com/v1/287a5e8f-bundle.js",
+# ]
 
 
 # Specifies a reST snippet to be appended to each .rst file
