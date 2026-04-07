@@ -12,7 +12,7 @@ This is a tested, exhaustive prompt for upgrading the [Docs Starter Pack](https:
 
 **Linting and checks:**
 
-- Includes instructions for working around current `vale` rules bugs and limitations (to be updated when fixed ruleset available).
+- Includes instructions for working around current `vale` rules bugs and limitations (to be updated when fixed rule set available).
 - Similarly, workarounds are included for `pymarkdownlint`, which has no MyST support.
 - Final checklist requires passing all checks and lints; remove any (except `make html`) that you don't want to deal with during the upgrade.
 - Requires the use of `ruff` and `black` (Python linter and formatter) on `conf.py`; this is stricter than what upstream Starter Pack uses. Remove if not desired.
