@@ -17,6 +17,11 @@ This is a tested, exhaustive prompt for upgrading the [Docs Starter Pack](https:
 - Final checklist requires passing all checks and lints; remove any (except `make html`) that you don't want to deal with during the upgrade.
 - Requires the use of `ruff` and `black` (Python linter and formatter) on `conf.py`; this is stricter than what upstream Starter Pack uses. Remove if not desired.
 
+Created with:
+: * LLM: Claude Sonnet 4.6
+  * Agent: GitHub Copilot
+
+-----
 
 ````md
 # AI Instructions: Upgrade the Sphinx Docs Starter Pack
