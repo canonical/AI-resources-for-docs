@@ -3,13 +3,13 @@
 
 First, let's clean up the terminology around the multiple ways we can feed text to LLMs:
 
-| Term         | Invocation            | Invoked            | Should be optimized | Reusable   | Notes                                                                                                         |
-| ------------ | --------------------- | ------------------ | ------------------- | ---------- | ------------------------------------------------------------------------------------------------------------- |
-| Prompt       | ad-hoc                | manually           | not always          | usually no | Fundamental LLM concept                                                                                       |
-| Command      | `/name`               | manually           | yes                 | yes        | Technically a prompt with metadata                                                                            |
-| Skill        | `/name` or autoloaded | auto or manual     | yes                 | yes        | [Recent concept](https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills) |
-| Instruction  | autoloaded            | auto (path-scoped) | yes                 | yes        | `.cursorrules`, `AGENTS.md`, `CLAUDE.md`, `.github/copilot-instructions.md`                                   |
-| Agent prompt | `/name` or autoloaded | auto or manual     | yes                 | yes        | Significantly alters default agent behavior                                                                   |
+| Term         | Invocation                    | Should be optimized | Reusable   | Notes                                                                                                         |
+| ------------ | ----------------------------- | ------------------- | ---------- | ------------------------------------------------------------------------------------------------------------- |
+| Prompt       | ad-hoc                        | not always          | usually no | Fundamental LLM concept                                                                                       |
+| Command      | `/name`                       | yes                 | yes        | Technically a prompt with metadata                                                                            |
+| Skill        | `/name` or autoloaded         | yes                 | yes        | [Recent concept](https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills) |
+| Instruction  | autoloaded, path-scoped       | yes                 | yes        | `.cursorrules`, `AGENTS.md`, `CLAUDE.md`, `.github/copilot-instructions.md`                                   |
+| Agent prompt | `/name` or autoloaded         | yes                 | yes        | Shapes agent persona and default behavior                                                                     |
 
 To confidently operate all these, you can either write and optimize them manually or resort to metaprompting (see below).
 ## Write
