@@ -12,17 +12,42 @@ First, let's clean up the terminology around the multiple ways we can feed text 
 | Agent prompt | `/name` or autoloaded         | yes                 | yes        | Shapes agent persona and default behavior                                                                     |
 
 To confidently operate all these, you can either write and optimize them manually or resort to metaprompting (see below).
+
 ## Write
 
-To start with writing, use these practical guides and specifications:
+To boost your AI-focused writing, use these practical guides and specifications.
 
-- https://agentskills.io/home
-- Anthropic's [skill building guide](https://resources.anthropic.com/hubfs/The-Complete-Guide-to-Building-Skill-for-Claude.pdf)
-- https://developers.openai.com/codex/skills
-- https://openai.com/academy/skills/
-- https://developers.googleblog.com/developers-guide-to-building-adk-agents-with-skills/
+Prompts are the most fundamental part. Everything here applies elsewhere:
 
-There's no single authority on how skills should be written; anything goes that makes your combination of an LLM and an agent tick the way you want.
+- Anthropic: https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/
+- OpenAI: https://developers.openai.com/api/docs/guides/prompt-guidance
+
+Skills are predefined reusable prompts that the agent invokes when it needs to (usually when the skill metadata advertise it as a match for the task at hand):
+
+- Anthropic:
+  - Original specification: https://agentskills.io/home
+  - [Skill building guide](https://resources.anthropic.com/hubfs/The-Complete-Guide-to-Building-Skill-for-Claude.pdf)
+
+- OpenAI:
+  - https://openai.com/academy/skills/
+  - https://developers.openai.com/codex/skills
+
+- Google: https://developers.googleblog.com/developers-guide-to-building-adk-agents-with-skills/
+
+Instructions are repo-wide prompt files that provide extra details on the whole project or its parts:
+
+- Anthropic:
+  - https://code.claude.com/docs/en/best-practices#write-an-effective-claude-md
+  - https://code.claude.com/docs/en/claude-directory
+
+- GitHub:
+  - https://docs.github.com/en/copilot/tutorials/customize-code-review
+  - https://github.blog/ai-and-ml/github-copilot/how-to-write-a-great-agents-md-lessons-from-over-2500-repositories/
+
+- OpenAI: https://developers.openai.com/codex/guides/agents-md
+
+There's no single authority on how prompts, skills, or instructions should be written; anything goes that makes your combination of an LLM and an agent tick the way you want.
+
 ## Optimize
 
 Writing a prompt is one thing; ensuring it works as intended and cutting the waste, a.k.a. optimizing, is another.
