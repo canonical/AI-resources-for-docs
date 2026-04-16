@@ -14,6 +14,7 @@ If you find ways to improve the performance of any of the helper tools through y
 
 Getting started <tutorial/index>
 Context engineering <context/index>
+Prompt and skill optimization <writing/index>
 Re-usable prompts <prompts/index>
 Helper scripts <scripts/index>
 Full toolkits <toolkits/index>

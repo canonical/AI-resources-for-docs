@@ -1,6 +1,9 @@
 # Leave a blank line at the end of this file to support concatenation
+Andrej
+Anthropic
 CSVs
 Danika
+Karpathy
 LLMs
 Linkcheck
 Manpage
@@ -9,6 +12,8 @@ Stephane
 Subiquity
 apparmor
 autoinstall
+autoloaded
+autoresearch
 bootloader
 callout
 callouts
@@ -25,11 +30,13 @@ linkchecker
 lorem
 manpage
 manpages
+metaprompting
 monospaced
 multicast
 multipath
 multipathd
 netboot
+overfit
 passthrough
 repo
 rsync

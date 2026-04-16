@@ -245,6 +245,9 @@ linkcheck_ignore = [
     "https://example.com",
     # SourceForge domains often block linkcheck
     r"https://.*\.sourceforge\.(net|io)/.*",
+    # Sites that block automated requests with 403
+    "https://openai.com/academy/skills/",
+    r"https://www\.researchgate\.net/.*",
     ]
 
 # A regex list of URLs where anchors are ignored by 'make linkcheck'
