@@ -17,6 +17,7 @@ premade-metaprompt
 semantic-markup-conversion-prompt
 upgrade-the-starter-pack
 docs-homepage-pattern
+docs-landing-page
 ```
 
 

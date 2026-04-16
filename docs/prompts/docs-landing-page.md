@@ -3,7 +3,8 @@
 
 Use this prompt to review the landing pages in a Canonical documentation repository. The prompt instructs an agent to study the repository structure, identify the landing pages for each Diátaxis information type, and evaluate them against a standard example and a set of rules. The agent then produces a report of findings with specific suggestions for improvement.
 
----
+------
+```md
 
 ## Landing pages: definition and purpose
 
@@ -19,7 +20,7 @@ The left navigation of the documentation displays all or some of the relevant ca
 
 ## Landing page standard example
 
-The example below contains dummy links. When applying to documentation repositories, use this as an example of how the structure should be and use appropriate links to the link texts.
+The example below contains placeholders for links. When applying to documentation repositories, use this as an example of how the structure should be and use appropriate links to the link texts.
 
 ### Example of good
 
@@ -91,7 +92,7 @@ For an efficient deployment, you will need to continuously observe the health of
 
 ## Rules for landing pages
 
-1. Each Diátaxis category in the left navigation should have a landing page with a name index.md
+1. Each Diátaxis category in the left navigation should have a landing page with a name `index.md`. Occasionally, repositories could have index files in a different name (such as landing). If you do not find the `index.md` or `index.rst`, ask user input for the section level home pages.
 
    ```md
    Tutorial
@@ -113,8 +114,13 @@ For an efficient deployment, you will need to continuously observe the health of
 
    When writing explanatory text, do not include statements that merely talk about the obvious purpose of the documentation link.
 
-   * Bad example: See [logs](#) to understand how to view logs.
-   * Good example: Instance logs help you troubleshoot issues with your application when they have an unexplained error status.
+   * Bad example: For more information on the different logging levels that can be configured in Multipass, see [Logging levels](https://documentation.ubuntu.com/multipass/stable/reference/logging-levels/).
+   * Good example:
+    ```md
+     Multipass has a hierarchy of logging levels that help you understand how severe an instance failure is and also exposes important instance level events.
+        * [Logging levels](https://documentation.ubuntu.com/multipass/stable/reference/logging-levels/).
+    ```
+
 
 1. Each group must contain links to the guides under the relevant Diátaxis information type and these links should be using an unordered list format as shown in the example. Even when there is a singular link, it is preferable to follow the unordered list format for consistency.
 
@@ -123,7 +129,7 @@ For an efficient deployment, you will need to continuously observe the health of
 ### Rules specific to Tutorial landing pages
 
 - Ideally, there must be just one tutorial. If there are multiple, suggest a consideration for the users to identify which of the existing topics are really tutorials that a new user needs.
-- When there is exactly one tutorial, the tutorial file itself can serve as the landing page. In this case, no separate (`index.md` or `index.rst`) is needed. Check whether the parent toctree (usually the documentation root `index.md` or `index.rst`) points directly to the tutorial file rather than to a `tutorial/index`. If it does, this is the correct and complete pattern. Note this pattern in your review report and move on to the next information type.
+- When there is exactly one tutorial, the tutorial file itself can serve as the landing page. In this case, no separate (`index.md` or `index.rst`) is needed. Check whether the parent `toctree` (usually the documentation root `index.md` or `index.rst`) points directly to the tutorial file rather than to a `tutorial/index`. If it does, this is the correct and complete pattern. Note this pattern in your review report and move on to the next information type.
 - When there is more than one tutorial, ask for user input on learning progression and any optional tutorials.
     - Use that input to organize the mandatory tutorial that is helpful for the new user first.
     - Explain each tutorial's purpose
@@ -160,30 +166,30 @@ Follow these steps in order:
       |---|---|---|
       | Section heading | `## Heading text` | `Heading text` followed by a line of `-` characters the same length |
       | Inline link | `* [Link text](target)` or `* {ref}\`label\`` | `- :ref:\`label\`` or `- \`Link text <target>\`_` |
-      | Visible toctree | ` ```{toctree} ` with entries on separate lines | `.. toctree::` directive with entries indented below |
-      | Hidden toctree | ` ```{toctree}` with `:hidden:` | `.. toctree::` with `:hidden:` option |
+      | Visible `toctree` | ` ```{toctree} ` with entries on separate lines | `.. toctree::` directive with entries indented below |
+      | Hidden `toctree` | ` ```{toctree}` with `:hidden:` | `.. toctree::` with `:hidden:` option |
 
     * For documentation that uses a mix of both markups, use the same markup as the existing landing pages.
     * For documentation that uses a mix of both markups and has no landing pages, ask the user which format they would prefer.
 
-1. Understand how links and toctrees appear in raw markup.
+1. Understand how links and TOC structures appear in raw markup.
 
     Link text must concisely describe the target guides. Landing pages of a particular information type must contain groups or sections of links that are of the same information type.
 
     The required pattern for each section is: **heading → explanatory text → links**. Links can be written in two valid ways:
 
     * **Inline bullet list**: A section heading, a prose paragraph, then a bullet list of links.
-    * **Visible toctree**: A section heading, a prose paragraph, then a `toctree` directive without `:hidden:`. The toctree renders as the link list.
+    * **Visible `toctree`**: A section heading, a prose paragraph, then a `toctree` directive without `:hidden:`. The `toctree` renders as the link list.
 
-    In both cases the heading and explanatory text are regular prose written outside and above the link list or toctree directive. The toctree directive itself only produces the link list — it cannot contain prose.
+    In both cases the heading and explanatory text are regular prose written outside and above the link list or `toctree` directive. The `toctree` directive itself only produces the link list — it cannot contain prose.
 
-    A **hidden toctree** (`:hidden:` in both MyST and RST) controls the left-navigation sidebar but produces no visible content on the page. A landing page that contains only a hidden toctree does not satisfy the standard, regardless of how complete its link list is.
+    A **hidden `toctree`** (`:hidden:` in both MyST and RST) controls the left-navigation sidebar but produces no visible content on the page. A landing page that contains only a hidden `toctree` does not satisfy the standard, regardless of how complete its link list is.
 
-    When reviewing raw markup, look beyond the toctree directive to check whether grouped, explained sections exist as visible page content.
+    When reviewing raw markup, look beyond the `toctree` directive to check whether grouped, explained sections exist as visible page content.
 
 1. Identify the landing pages that exist for each information type.
 
-    For the Tutorial type, note that a single tutorial file can serve as its own landing page without a separate index file. Before flagging a missing tutorial landing page, check whether the parent toctree points directly to a tutorial file. If it does, this is the correct pattern — the tutorial file contains the tutorial content itself, not a grouped link structure. Do not evaluate it against the landing page standard. Note this pattern in your review report and move on to the next information type.
+    For the Tutorial type, note that a single tutorial file can serve as its own landing page without a separate index file. Before flagging a missing tutorial landing page, check whether the parent `toctree` points directly to a tutorial file. If it does, this is the correct pattern — the tutorial file contains the tutorial content itself, not a grouped link structure. Do not evaluate it against the landing page standard. Note this pattern in your review report and move on to the next information type.
 
 1. Identify all the guides that exist within the information type's hierarchy. For example, a how-to guide landing page could be the `index.md` file inside a `how-to/` folder with all the other files within the folder being the guides to be linked on the landing page.
 
@@ -195,7 +201,7 @@ Follow these steps in order:
 
     1. Check for completeness:
         * Are all guides of that Diátaxis information type linked from the landing page?
-        * Are the links present in user-facing content, either as inline bullet lists or visible toctrees?
+        * Are the links present in user-facing content, either as inline bullet lists or visible `toctree`?
     1. Check for format:
         * Does each section have a heading, explanatory text followed by a set of links to guides?
     1. Check for quality:
@@ -208,3 +214,4 @@ Follow these steps in order:
         * If the landing page has very few guides or all guides fall under the same domain of concern, check whether the grouping adds meaning or merely adds a heading that restates the page title. If grouping adds no meaning, suggest a flat list with a strong page-level introduction and per-link descriptions instead, and flag that grouping should be reconsidered as the section grows.
 
 1. Compile your findings and suggestions for improvements to the landing pages along with the reasons for your claims.
+```
