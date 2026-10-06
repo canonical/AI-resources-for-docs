@@ -23,7 +23,7 @@ Based on the assessment of my team, I can provide an approximate error rate of *
 
     ## Objective
 
-    Add HTML meta description tags to all documentation files (`.md` or `.rst`) in the `docs/` directory. Each description should be 120-160 characters, SEO-optimized, and accurately describe the page's content.
+    Add HTML meta description tags to all documentation files (`.md` or `.rst`) in the `docs/` directory that do not already have one. Each new description should be 120-160 characters, SEO-optimized, and accurately describe the page's content.
 
     ## Requirements
 
@@ -42,7 +42,7 @@ Based on the assessment of my team, I can provide an approximate error rate of *
     3. **Write descriptions systematically**
       - Process files section by section (tutorial, how-to, explanation, reference, contributing, etc.)
       - Base each description on the page's actual content (read the file)
-      - Keep descriptions 120-160 characters for optimal SEO
+      - Keep new descriptions 120-160 characters for optimal SEO
       - Use action-oriented language: "Learn how to...", "Understand...", "Complete reference for..."
       - Include relevant keywords naturally
       - Make descriptions useful for both search engines and users
@@ -50,7 +50,7 @@ Based on the assessment of my team, I can provide an approximate error rate of *
     4. **Handle edge cases**
       - Preserve existing reference labels and formatting
       - Account for blank lines after labels where present
-      - Skip files that already have metadata
+      - Skip files that already have metadata; do not modify their existing metadata descriptions
       - Handle both landing pages and content pages appropriately
 
     5. **Track progress**
@@ -59,7 +59,7 @@ Based on the assessment of my team, I can provide an approximate error rate of *
       - Report progress periodically
 
     6. **Quality assurance**
-      - After completion, verify all documentation files have metadata
+      - After completion, verify all documentation files have metadata and that existing metadata descriptions are unchanged
       - Test that the documentation builds successfully
       - Check that metadata appears correctly in generated HTML (look for `<meta name="description">` tags)
       - Confirm there are no new build errors or warnings caused by the changes
@@ -85,7 +85,8 @@ Based on the assessment of my team, I can provide an approximate error rate of *
     ## Success Criteria
 
     - Every documentation file has an appropriate metadata description
-    - All descriptions are 120-160 characters
+    - All newly added descriptions are 120-160 characters
+    - Existing metadata descriptions are unchanged
     - Documentation builds without new errors
     - Metadata tags appear correctly in generated HTML output
     - Complete summary provided with any recommendations
@@ -118,5 +119,4 @@ Based on the assessment of my team, I can provide an approximate error rate of *
     ```
 
     Begin by surveying the documentation structure, then proceed to add metadata descriptions to every file systematically.
-
 
